@@ -50,7 +50,23 @@ A Google Tag Manager (GTM) custom variable template designed to transform arrays
 3. Configure the fields as per your requirements.
 
 ---
+### Transform and Format Object Attributes in an Array  
 
+This variable template allows users to transform attribute keys in an array of objects based on a mapping table while also applying optional data formatting.  
+
+#### Features:  
+- **Attribute Key Mapping:** Replaces specified attribute keys with new ones using a mapping table.  
+- **Data Formatting Options:**  
+  - Convert selected attributes to numbers.  
+  - Convert selected attributes to integers.  
+  - Convert selected attributes to strings.  
+- **Flexible Configuration:** Users can enable or disable each formatting option and specify which attributes should be formatted.  
+
+#### Behavior:  
+- Processes an array of objects, applying key transformations and formatting where applicable.  
+- If the input is invalid, returns `undefined`.
+
+---
 ## Author
 
 Created by **Jude Nwachukwu Onyejekwe**.
