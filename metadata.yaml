@@ -2,5 +2,5 @@
 homepage: https://dumbdata.co/
 documentation: https://github.com/Jude-Nwachukwu/gtm-item-array-transformation
 versions:
-  - sha: 32d84cea09131b560180692ae69c992855aaca3f
+  - sha: 358ee7f5922591d2adc2809fec2dfa7dd4a8a433
     changeNotes: Initial release.
