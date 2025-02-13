@@ -4,8 +4,10 @@ A Google Tag Manager (GTM) custom variable template designed to transform arrays
 
 ## Features
 - **Flexible Attribute Mapping**: Map old keys to new keys using a user-defined table.
+- **Ecommerce Items Source Selection**: Choose between GA4's `ecommerce.items` array or a custom variable.
 - **Efficient Data Handling**: Validates input arrays and ensures proper mapping.
 - **Dynamic Transformations**: Handles complex transformations dynamically and reliably.
+- **Data Formatting Options**: Convert attributes to numbers, integers, or strings.
 - **Sandboxed Execution**: Fully compliant with GTM's sandboxed JavaScript environment.
 
 ## Use Cases
@@ -13,14 +15,29 @@ A Google Tag Manager (GTM) custom variable template designed to transform arrays
 - Converting object keys to align with third-party integration requirements.
 - Adapting data layers for use in multi-platform analytics.
 
-## Template Fields
+## Template Configuration
+### 1. Select Items Array Source
+Users must first choose the **Ecommerce Items Array Source (Array of Objects)**:
+
+| Option | Description |
+|--------|-------------|
+| **Use GA4 Ecommerce Items Array** | Automatically fetches the `ecommerce.items` array from the GA4 dataLayer. |
+| **Use Custom Variable** | Requires users to provide a variable containing the items array. |
+
+After selecting the source, proceed with attribute mapping and optional data formatting.
+
+### 2. Attribute Key Mapping
 | Field Name              | Description                                     |
 |-------------------------|-------------------------------------------------|
-| **Input Array**         | The array of objects to be transformed.         |
 | **Attribute Mapping**   | A table mapping old keys to new keys.           |
 
-## Transformation Example
+### 3. Data Formatting Options
+Users can apply transformations to selected attributes:
+- **Convert to Number**
+- **Convert to Integer**
+- **Convert to String**
 
+## Transformation Example
 ### Input
 **Input Array**  
 ```json
@@ -29,50 +46,31 @@ A Google Tag Manager (GTM) custom variable template designed to transform arrays
   { "oldKey1": "value3", "oldKey2": "value4" }
 ]
 ```
-# Attribute Mapping Table
 
+### Attribute Mapping Table
 | Old Key   | New Key   |
 |-----------|-----------|
 | oldKey1   | newKey1   |
 | oldKey2   | newKey2   |
 
-## Output
-### Transformed Array
+### Output
 ```json
 [
   { "newKey1": "value1", "newKey2": "value2" },
   { "newKey1": "value3", "newKey2": "value4" }
 ]
 ```
+
 ## Installation
 1. Download the JSON file for the custom template from this repository.
 2. Import it into your Google Tag Manager account.
 3. Configure the fields as per your requirements.
 
----
-### Transform and Format Object Attributes in an Array  
-
-This variable template allows users to transform attribute keys in an array of objects based on a mapping table while also applying optional data formatting.  
-
-#### Features:  
-- **Attribute Key Mapping:** Replaces specified attribute keys with new ones using a mapping table.  
-- **Data Formatting Options:**  
-  - Convert selected attributes to numbers.  
-  - Convert selected attributes to integers.  
-  - Convert selected attributes to strings.  
-- **Flexible Configuration:** Users can enable or disable each formatting option and specify which attributes should be formatted.  
-
-#### Behavior:  
-- Processes an array of objects, applying key transformations and formatting where applicable.  
-- If the input is invalid, returns `undefined`.
-
----
 ## Author
-
 Created by **Jude Nwachukwu Onyejekwe**.
 
 This template is part of the [Dumbdata.co Measurement Resource Hub](https://dumbdata.co), which provides resources designed to simplify measurement strategies and implementations.
 
----
 ## License
 This project is licensed under the Apache License.
+
